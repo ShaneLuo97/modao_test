@@ -1,0 +1,96 @@
+body{
+    background-color: #f5f5f5;
+}
+div{
+    display: flex;
+}
+.projects{
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex; 
+    justify-content: flex-start;
+    min-width: 800px;
+    width: 100%;
+}
+.project-card{
+    width: calc(25% - 44px);
+    margin: 10px 10px;
+    height: 100px;
+    background-color: #ffffff;
+    display: flex; 
+    justify-content: flex-start;
+    border-radius: 5px;
+    padding:10px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.20);
+}
+.locked{
+    border: 2px solid #c9cdd0;
+}
+.project-card:hover{
+    cursor: pointer;
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.30);
+}
+.project-card .avatar{
+   margin-right: 10px;
+}
+.project-card .avatar span{
+    background-color:royalblue;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 10px 0 0 10px;
+}
+.project-card .detail{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    white-space: nowrap;
+    width: calc(100% - 70px);
+}
+.project-card .project-tags span{
+    border: 1px solid #e7e7eb;
+    border-radius: 5px;
+    color: #9aa6ad;
+    font-size: 12px;
+    padding: 2px 10px;
+    margin-right:10px; 
+}
+.project-card .detail .project-name,.project-card .detail .project-tags,.project-card .detail .project-count{
+    height: 33.33%;
+    display: flex;
+    align-items:center;
+}
+.project-card .detail .project-count{
+    color: #b2bcc1;
+}
+.project-card .detail .project-count span{
+    margin-right: 8px;
+}
+.project-card .detail .project-name,.project-card .detail .project-count span{
+    color: #67737a;
+    font-size: 17px;
+}
+.project-card .add-new{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.project-card .add-new i{
+    width: 40px;
+    height: 40px;
+    background-color: #9aa6ad;
+    color: white;
+    font-size: 40px;
+    line-height: 35px;
+    font-style: normal;
+    border-radius: 50%;
+    text-align: center
+}
+.project-card .add-new span{
+    color: #9aa6ad;
+    margin-top: 10px;
+}
