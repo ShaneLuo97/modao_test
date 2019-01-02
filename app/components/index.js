@@ -16,18 +16,41 @@ let jsonData = [
 export default class Index extends React.Component{
   constructor(props){
     super(props);
+    this.state = {data:jsonData};
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(e){
+    var val = e.target.value;
+    if(val == "private"){
+      var arr = jsonData.filter((e)=>e.private);
+      console.log(arr);
+      this.setState({data:arr})
+    }else if(val == "locked"){
+      var arr = jsonData.filter((e)=>e.locked);
+      console.log(arr);
+      this.setState({data:arr})
+    }else{
+      this.setState({data:jsonData})
+    }
   }
   render(){
     //遍历数据获得组件数组
-    let dataArray = jsonData.map((data)=>{
+    let dataArray = this.state.data.map((data)=>{
       return (
         <Card data={data}/>
       )
     })
     return (
-      <div className="projects">
-          {dataArray}
-          <Add/>
+      <div>
+        <select onChange={this.handleChange}>
+          <option value="all">所有</option>
+          <option value="private">私密</option>
+          <option value="locked">锁定</option>
+        </select>
+        <div className="projects">
+            {dataArray}
+            <Add/>
+        </div>
       </div>
     );
   }
